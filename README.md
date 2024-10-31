@@ -1,72 +1,28 @@
-# Welcome to TanStack.com!
+# Error 1
 
-This site is built with TanStack Router!
+## How to run
 
-- [TanStack Router Docs](https://tanstack.com/router)
+1. `pnpm i`
+2. pnpm start:clean
 
-It's deployed automagically with Vercel!
+## Changes from working-example-1
 
-- [Vercel](https://vercel.com/)
+1. add `"use server"` to `lib/service.ts`
 
-## Development
+## Error
 
-From your terminal:
+```txt
+ ERROR  [vite-server-references] undefined does not match field "params": [Pattern] of type FunctionExpression                                                                              12:43:57 AM
+file: /Users/ryancallahan/repos/nitro-app-undefined-repro/lib/service.ts
 
-```sh
-pnpm install
-pnpm dev
+  file: lib/service.ts
+  at addParam (node_modules/.pnpm/ast-types@0.16.1/node_modules/ast-types/lib/types.js:455:27)
+  at node_modules/.pnpm/ast-types@0.16.1/node_modules/ast-types/lib/types.js:505:25
+  at Array.forEach (<anonymous>)
+  at builder.from (node_modules/.pnpm/ast-types@0.16.1/node_modules/ast-types/lib/types.js:503:46)
+  at wrapExports (node_modules/.pnpm/@vinxi+plugin-directives@0.4.3_vinxi@0.4.3_@types+node@22.8.4_ioredis@5.4.1_terser@5.36.0_/node_modules/@vinxi/plugin-directives/plugins/wrap-exports.js:393:45)
+  at Object.transform (node_modules/.pnpm/@vinxi+plugin-directives@0.4.3_vinxi@0.4.3_@types+node@22.8.4_ioredis@5.4.1_terser@5.36.0_/node_modules/@vinxi/plugin-directives/plugins/wrap-exports.js:44:24)
+  at Object.transform (node_modules/.pnpm/@vinxi+plugin-directives@0.4.3_vinxi@0.4.3_@types+node@22.8.4_ioredis@5.4.1_terser@5.36.0_/node_modules/@vinxi/plugin-directives/plugin.js:52:31)
+  at Object.handler (node_modules/.pnpm/vite@5.4.10_@types+node@22.8.4_terser@5.36.0/node_modules/vite/dist/node/chunks/dep-BWSbWtLw.js:65683:15)
+  at node_modules/.pnpm/rollup@4.24.3/node_modules/rollup/dist/es/shared/node-entry.js:20760:40
 ```
-
-This starts your app in development mode, rebuilding assets on file changes.
-
-## Editing and previewing the docs of TanStack projects locally
-
-The documentations for all TanStack projects except for `React Charts` are hosted on [https://tanstack.com](https://tanstack.com), powered by this TanStack Router app.
-In production, the markdown doc pages are fetched from the GitHub repos of the projects, but in development they are read from the local file system.
-
-Follow these steps if you want to edit the doc pages of a project (in these steps we'll assume it's [`TanStack/form`](https://github.com/tanstack/form)) and preview them locally :
-
-1. Create a new directory called `tanstack`.
-
-```sh
-mkdir tanstack
-```
-
-2. Enter the directory and clone this repo and the repo of the project there.
-
-```sh
-cd tanstack
-git clone git@github.com:TanStack/tanstack.com.git
-git clone git@github.com:TanStack/form.git
-```
-
-> [!NOTE]
-> Your `tanstack` directory should look like this:
->
-> ```
-> tanstack/
->    |
->    +-- form/
->    |
->    +-- tanstack.com/
-> ```
-
-> [!WARNING]
-> Make sure the name of the directory in your local file system matches the name of the project's repo. For example, `tanstack/form` must be cloned into `form` (this is the default) instead of `some-other-name`, because that way, the doc pages won't be found.
-
-3. Enter the `tanstack/tanstack.com` directory, install the dependencies and run the app in dev mode:
-
-```sh
-cd tanstack.com
-pnpm i
-# The app will run on https://localhost:3000 by default
-pnpm dev
-```
-
-4. Now you can visit http://localhost:3000/form/latest/docs/overview in the browser and see the changes you make in `tanstack/form/docs`.
-
-> [!NOTE]
-> The updated pages need to be manually reloaded in the browser.
-
-> [!WARNING]
-> You will need to update the `docs/config.json` file (in the project's repo) if you add a new doc page!
