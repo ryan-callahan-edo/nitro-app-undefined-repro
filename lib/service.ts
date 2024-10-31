@@ -1,4 +1,3 @@
-"use server";
 import { asClass } from "awilix";
 
 class Service {
