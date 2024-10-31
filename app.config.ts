@@ -1,12 +1,18 @@
-import { defineConfig } from '@tanstack/start/config'
-import tsConfigPaths from 'vite-tsconfig-paths'
+import { defineConfig } from "@tanstack/start/config";
+import viteTsConfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   vite: {
     plugins: [
-      tsConfigPaths({
-        projects: ['./tsconfig.json'],
+      viteTsConfigPaths({
+        projects: ["./tsconfig.json"],
       }),
     ],
+    optimizeDeps: {
+      entries: [],
+    },
   },
-})
+  server: {
+    preset: "node-server",
+  },
+});

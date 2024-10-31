@@ -1,16 +1,26 @@
 {
   "name": "tanstack-start-example-basic",
+  "version": "1.0.0",
+  "description": "",
   "private": true,
-  "sideEffects": false,
   "type": "module",
   "scripts": {
     "dev": "vinxi dev",
-    "build": "vinxi build --preset node-server",
-    "start": "vinxi start --preset node-server"
+    "build": "vinxi build",
+    "start": "vinxi start",
+    "start:clean": "rm -rf .output .vinxi && vinxi build && vinxi start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@9.11.0+sha512.0a203ffaed5a3f63242cd064c8fb5892366c103e328079318f78062f24ea8c9d50bc6a47aa3567cabefd824d170e78fa2745ed1f16b132e16436146b7688f19b",
+  "engines": {
+    "node": "~22.9.0"
   },
   "dependencies": {
     "@tanstack/react-router": "^1.77.8",
     "@tanstack/start": "^1.77.8",
+    "awilix": "^12.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "vinxi": "^0.4.3"
