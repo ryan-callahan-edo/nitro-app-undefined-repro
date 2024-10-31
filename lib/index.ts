@@ -1,6 +1,6 @@
 "use server";
-import { createContainer, InjectionMode } from "awilix";
-import { ConfigureService } from "./service";
+import { asClass, createContainer, InjectionMode } from "awilix";
+import { Service } from "./service";
 
 const container = createContainer({
   injectionMode: InjectionMode.CLASSIC,
@@ -8,7 +8,7 @@ const container = createContainer({
 });
 
 container.register({
-  ...ConfigureService(),
+  serivice: asClass(Service).singleton(),
 });
 
 export default container;
